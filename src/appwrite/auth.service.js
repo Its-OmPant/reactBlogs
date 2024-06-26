@@ -7,6 +7,7 @@ class AuthService {
 
 	constructor() {
 		this.client.setEndpoint(config.appwriteURL).setProject(config.projectID);
+		this.account = new Account(this.client);
 	}
 
 	async createAccount({ email, password, username }) {
@@ -19,7 +20,8 @@ class AuthService {
 			);
 
 			if (userAccount) {
-				//some function to login user
+				//call to login user
+				return this.login({ email, password });
 			} else {
 				return userAccount;
 			}
@@ -42,6 +44,7 @@ class AuthService {
 		} catch (error) {
 			console.err("appwrite service :: getCurrentUser error :: ", error);
 		}
+		return null;
 	}
 
 	async logout() {
