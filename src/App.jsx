@@ -27,7 +27,7 @@ function App() {
 		<div className="min-h-screen bg-green-200 flex flex-wrap content-between">
 			<div className="w-full block">
 				<Header />
-				<main>{/* <Outlet></Outlet> */}</main>
+				<main> hello{/* <Outlet></Outlet> */}</main>
 				<Footer />
 			</div>
 		</div>
